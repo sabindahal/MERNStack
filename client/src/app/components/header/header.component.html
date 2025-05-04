@@ -1,0 +1,8 @@
+<header>
+  <h1>PostWave</h1>
+  <div style="float:right" *ngIf="authService.isLoggedIn()">
+    Logged in as {{ authService.getUsername() }}
+    <button (click)="logout()">Logout</button>
+  </div>
+</header>
+

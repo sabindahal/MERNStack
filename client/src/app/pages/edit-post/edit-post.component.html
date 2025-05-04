@@ -1,0 +1,20 @@
+<h2>Edit Post</h2>
+
+<form (ngSubmit)="updatePost()" enctype="multipart/form-data">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title" required />
+  <textarea [(ngModel)]="content" name="content" placeholder="Content" required></textarea>
+
+  <div *ngIf="existingImageName">
+    <p>Current image:</p>
+    <img [src]="'http://localhost:5000/uploads/' + existingImageName" width="200" />
+  </div>
+
+  <p>You can choose a new image (optional):</p>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+  <button type="submit">Update</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
+
+<p *ngIf="error" style="color:red">{{ error }}</p>
+

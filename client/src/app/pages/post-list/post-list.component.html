@@ -1,0 +1,20 @@
+<h2>All Posts</h2>
+
+<div *ngIf="error" style="color: red">{{ error }}</div>
+
+<div *ngIf="posts.length === 0">
+  No posts found.
+</div>
+
+<div *ngFor="let post of posts" class="post-preview">
+  <h3>{{ post.title }}</h3>
+  <img
+    *ngIf="post.imageName"
+    [src]="'http://localhost:5000/uploads/' + post.imageName"
+    alt="Preview"
+    width="150"
+  />
+  <p>Waves: {{ post.listOfUsersWaved?.length || 0 }}</p>
+  <button (click)="viewPost(post._id)">View</button>
+</div>
+

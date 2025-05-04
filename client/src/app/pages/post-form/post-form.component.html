@@ -1,0 +1,11 @@
+<h2>Add New Post</h2>
+
+<form (ngSubmit)="submitPost()" enctype="multipart/form-data">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Title" required />
+  <textarea [(ngModel)]="content" name="content" placeholder="Content" required></textarea>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" required />
+  <button type="submit">Submit</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
+
+<p *ngIf="error" style="color:red">{{ error }}</p>
