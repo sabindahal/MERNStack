@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   selector: 'app-header',
   templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
   imports: [CommonModule]
 })
 export class HeaderComponent {
