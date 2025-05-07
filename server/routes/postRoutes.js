@@ -18,7 +18,7 @@ router.get('/', getPosts);
 router.get('/:id', getPostById);
 router.post('/', authenticate, upload.single('image'), addPost);
 router.put('/:id', authenticate, upload.single('image'), editPost);
-router.post('/:id/wave', authenticate, wavePost);
+router.patch('/:id/wave', authenticate, wavePost);
 router.get('/:id/wavers', authenticate, getWavers);
 router.delete('/:id', authenticate, deletePost);
 
