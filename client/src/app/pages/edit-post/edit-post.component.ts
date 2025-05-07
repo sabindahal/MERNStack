@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',
+  styleUrls: ['./edit-post.component.scss'],
   imports: [CommonModule, FormsModule]
 })
 export class EditPostComponent implements OnInit {
