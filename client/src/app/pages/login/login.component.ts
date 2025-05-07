@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   imports: [CommonModule, FormsModule]
 })
 export class LoginComponent {
@@ -21,7 +22,6 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
         this.authService.setUser(res.token, res.username);
-        localStorage.setItem('token', res.token);
         this.router.navigate(['/posts']);
       },
       error: (err) => {
