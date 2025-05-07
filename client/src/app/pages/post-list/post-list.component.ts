@@ -30,4 +30,14 @@ export class PostListComponent implements OnInit {
   viewPost(id: string): void {
     this.router.navigate(['/posts', id]);
   }
+
+  editPost(id: string) {
+    this.router.navigate(['/edit-post', id]);
+  }
+
+  deletePost(id: string) {
+    this.postService.deletePost(id).subscribe(() => {
+      this.posts = this.posts.filter(post => post._id !== id);
+    });
+  }
 }

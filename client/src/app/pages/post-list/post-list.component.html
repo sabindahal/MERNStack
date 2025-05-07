@@ -20,5 +20,7 @@
   />
   <p>Waves: {{ post.listOfUsersWaved?.length || 0 }}</p>
   <button (click)="viewPost(post._id)">View</button>
+  <button (click)="editPost(post._id)">✏️ Edit</button>
+  <button (click)="deletePost(post._id)">🗑️ Delete</button>
 </div>
 
