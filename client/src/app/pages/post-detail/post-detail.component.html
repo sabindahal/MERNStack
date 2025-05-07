@@ -8,6 +8,8 @@
   <img *ngIf="post.imageName" [src]="'http://localhost:5000/uploads/' + post.imageName" alt="Post image" width="300" />
 
   <p>Waves: {{ post.listOfUsersWaved?.length || 0 }}</p>
-  <button (click)="wave()">Wave</button>
+  <button (click)="wave()">
+    {{ isWaved ? 'Unwave' : 'Wave' }}
+  </button>
   <button (click)="goBack()">Go Back</button>
 </div>

@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Post = require('../models/Post');
 const User = require('../models/User');
 
@@ -37,16 +38,27 @@ exports.editPost = async (req, res) => {
   res.json(post);
 };
 
+
 exports.wavePost = async (req, res) => {
   const post = await Post.findById(req.params.id);
   if (!post) return res.status(404).json({ error: 'Post not found' });
 
-  if (!post.listOfUsersWaved.includes(req.user.id)) {
-    post.listOfUsersWaved.push(req.user.id);
-    await post.save();
+  const userId = new mongoose.Types.ObjectId(req.user.id);
+
+  // 如果用户已 wave，则取消 wave；否则添加 wave
+  const index = post.listOfUsersWaved.findIndex(id => id.equals(userId));
+  if (index === -1) {
+    post.listOfUsersWaved.push(userId);
+  } else {
+    post.listOfUsersWaved.splice(index, 1);
   }
 
-  res.json({ message: 'Waved!', count: post.listOfUsersWaved.length });
+  await post.save();
+
+  res.json({
+    message: index === -1 ? 'Waved!' : 'Unwaved!',
+    count: post.listOfUsersWaved.length
+  });
 };
 
 exports.getWavers = async (req, res) => {
