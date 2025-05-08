@@ -5,8 +5,7 @@
 <div *ngIf="post">
   <h3>{{ post.title }}</h3>
   <p>{{ post.content }}</p>
-  <img *ngIf="post.imageName" [src]="'http://localhost:5000/uploads/' + post.imageName" alt="Post image" width="300" />
-
+  <img *ngIf="post.imageName" [src]="uploadBaseUrl + post.imageName" alt="Post image" width="300" />
   <p>Waves: {{ post.listOfUsersWaved?.length || 0 }}</p>
   <button (click)="wave()">
     {{ isWaved ? 'Unwave' : 'Wave' }}

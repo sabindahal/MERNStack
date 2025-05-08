@@ -3,6 +3,7 @@ import { PostService } from '../../services/post.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   standalone: true,
@@ -14,6 +15,8 @@ import { RouterModule } from '@angular/router';
 export class PostListComponent implements OnInit {
   posts: any[] = [];
   error: string = '';
+  uploadBaseUrl: string = environment.server_api.replace('/api', '') + '/uploads/';
+
 
   constructor(private postService: PostService, private router: Router) {}
 

@@ -6,7 +6,7 @@
 
   <div *ngIf="existingImageName">
     <p>Current image:</p>
-    <img [src]="'http://localhost:5000/uploads/' + existingImageName" width="200" />
+    <img [src]="uploadBaseUrl + existingImageName" width="200" />
   </div>
 
   <p>You can choose a new image (optional):</p>

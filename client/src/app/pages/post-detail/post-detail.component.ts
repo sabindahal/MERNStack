@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   standalone: true,
@@ -15,6 +16,8 @@ export class PostDetailComponent implements OnInit {
   error: string = '';
   postId: string = '';
   isWaved: boolean = false;
+  uploadBaseUrl: string = environment.server_api.replace('/api', '') + '/uploads/';
+
 
   constructor(
     private route: ActivatedRoute,

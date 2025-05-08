@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { environment } from '../../environments/environment';
 @Component({
   standalone: true,
   selector: 'app-edit-post',
@@ -18,6 +18,8 @@ export class EditPostComponent implements OnInit {
   image: File | null = null;
   existingImageName: string = '';
   error: string = '';
+  uploadBaseUrl: string = environment.server_api.replace('/api', '') + '/uploads/';
+
 
   constructor(
     private route: ActivatedRoute,

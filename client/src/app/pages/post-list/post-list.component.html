@@ -14,7 +14,7 @@
   <h3>{{ post.title }}</h3>
   <img
     *ngIf="post.imageName"
-    [src]="'http://localhost:5000/uploads/' + post.imageName"
+    [src]="uploadBaseUrl + post.imageName"
     alt="Preview"
     width="150"
   />
