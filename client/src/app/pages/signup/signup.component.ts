@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   standalone: true,
   selector: 'app-signup',
+  styleUrls: ['./signup.component.scss'],
   templateUrl: './signup.component.html',
   imports: [CommonModule, FormsModule]
 })
