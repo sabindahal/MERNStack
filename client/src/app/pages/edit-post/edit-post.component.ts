@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 @Component({
   standalone: true,
   selector: 'app-edit-post',
