@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 @Component({
   standalone: true,
   selector: 'app-post-form',
-  styleUrls: ['./post-form.component.scss'],
   templateUrl: './post-form.component.html',
   imports: [CommonModule, FormsModule]
 })
@@ -32,7 +31,9 @@ export class PostFormComponent {
     const formData = new FormData();
     formData.append('title', this.title);
     formData.append('content', this.content);
-    formData.append('image', this.image);
+    if (this.image) {
+      formData.append('image', this.image);
+    }
 
     this.postService.addPost(formData).subscribe({
       next: () => this.router.navigate(['/posts']),

@@ -29,4 +29,8 @@ export class PostService {
   deletePost(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/posts/${id}`);
   }
+
+  wavePost(postId: string) {
+    return this.http.patch(`/api/posts/${postId}/wave`, {});
+  }
 }
