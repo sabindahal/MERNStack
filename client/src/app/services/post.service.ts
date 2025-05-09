@@ -30,7 +30,16 @@ export class PostService {
     return this.http.delete(`${this.apiUrl}/posts/${id}`);
   }
 
-  wavePost(postId: string) {
-    return this.http.patch(`/api/posts/${postId}/wave`, {});
+  wavePost(postId: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers: Record<string, string> = {};
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    return this.http.patch(`${environment.server_api}/posts/${postId}/wave`, {}, { headers });
   }
+
+
 }

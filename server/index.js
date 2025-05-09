@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 
+
 // Route files
 const userRoutes = require('./routes/userRoutes');
 const postRoutes = require('./routes/postRoutes');
@@ -15,7 +16,22 @@ const app = express();
 let isMongoConnected = false;
 
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || 'http://localhost:4200',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    console.log('🔥 Preflight request received:', req.headers);
+  }
+  next();
+});
+
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions)); // Allow preflight for any route
+
 
 
 // Parse incoming JSON
