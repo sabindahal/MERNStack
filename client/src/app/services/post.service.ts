@@ -27,8 +27,16 @@ export class PostService {
   }
 
   deletePost(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/posts/${id}`);
+    const token = localStorage.getItem('token');
+    const headers: Record<string, string> = {};
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    return this.http.delete(`${this.apiUrl}/posts/${id}`, { headers });
   }
+
 
   wavePost(postId: string): Observable<any> {
     const token = localStorage.getItem('token');

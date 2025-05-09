@@ -1,71 +1,117 @@
-# PostWave 🌊 — Full Stack MEAN App
+# 🌊 PostWave — Full Stack MEAN Social Platform
 
-**PostWave** is a social event sharing platform where users can create posts, endorse events ("wave"), and interact with others. Built with the MEAN stack and deployed to live infrastructure.
-
----
-
-## Live Deployment
-
-- **Frontend**: [S3 Website](https://your-frontend-url.amazonaws.com)
-- **Backend (API)**: [Elastic Beanstalk API](https://your-backend-url.elasticbeanstalk.com)
-- **Database**: MongoDB Atlas (Remote)
+**PostWave** is a social event sharing platform where users can post events, “wave” (endorse) them, and interact with other users. Built with the MEAN stack and deployed to a live cloud environment.
 
 ---
 
-## Team Members & Roles
+## 🌐 Live Deployment
 
-| Name              | Role                                              |
-|-------------------|---------------------------------------------------|
-| Landis Bargatze   | Debugging, Deployment                             |
-| Junshan Tao       | Backend Logic, MongoDB Modeling, Authentification |
-| Sabin Dahal       | Deployment, Testing                               |
-| Patrick Garner    | UI Design, Testing                                |
+- **Frontend**: [Live S3 Site](https://your-s3-site-url.amazonaws.com)
+- **Backend (API)**: [Elastic Beanstalk API](https://your-backend.elasticbeanstalk.com)
+- **Database**: MongoDB Atlas
 
 ---
 
-## Tech Stack
+## 👥 Team Members & Roles
+
+| Name              | Role                                               |
+|-------------------|----------------------------------------------------|
+| **Landis Bargatze**   | 🔧 Debugging, Deployment, Frontend Integration     |
+| **Junshan Tao**       | 🔐 Backend Logic, MongoDB Modeling, Authentication |
+| **Sabin Dahal**       | 🚀 Deployment (EB & S3), Testing                 |
+| **Patrick Garner**    | 🎨 UI Design, UX Feedback, Functional Testing     |
+
+---
+
+## 🛠️ Tech Stack
 
 - **Frontend**: Angular 15
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB Atlas
+- **Backend**: Node.js + Express.js
+- **Database**: MongoDB Atlas (Mongoose ODM)
+- **Auth**: JWT (JSON Web Tokens)
 - **Deployment**:
-  - Frontend via AWS S3
-  - Backend via AWS Elastic Beanstalk
+  - Frontend via AWS S3 (Static Site Hosting)
+  - Backend via AWS Elastic Beanstalk (Node environment)
+  - Environment variables managed via EB Console
 
 ---
 
-## ⚙️ How to Run Locally
+## ⚙️ Local Development Setup
 
-1. **Clone the repo**
+### 1. Clone the Repo
 
-bash
+```bash
 git clone https://github.com/sabindahal/MERNStack.git
 cd MERNStack
+```
 
-2. **Install Dependencies**
+### 2. Install Dependencies
 
+**Backend:**
+
+```bash
 cd server
-npm install express mongoose cors dotenv bcryptjs jsonwebtoken multer
+npm install
+```
 
+**Frontend:**
 
+```bash
 cd ../client
 npm install
+```
 
-3. **Environment Variables**
+### 3. Configure Environment Variables
 
-Create a '.env' file in the /server root
-"
-PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/MEANStack
-JWT_SECRET=yourSecretKey
-"
+Create a `.env` file in the `/server` directory:
 
-4. **Run Application**
-# Backend
+```
+PORT=5050
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/PostWaveDB
+JWT_SECRET=yourSuperSecretKey
+CORS_ORIGIN=http://localhost:4200
+```
+
+> 🔐 Don’t commit this file to GitHub. Use `.env.template` for sharing config.
+
+### 4. Run the Application
+
+```bash
+# Start Backend
 cd server
 npm start
 
-# Frontend
-cd client
+# Start Frontend
+cd ../client
 ng serve
+```
 
+Access the app at [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 🧪 Features
+
+- ✅ User Signup & Login (JWT Auth)
+- ✅ Create/Edit/Delete Event Posts (with images)
+- ✅ Wave/Unwave (like/endorse) Posts
+- ✅ Mobile-friendly UI
+- ✅ Protected routes & token-based API access
+- ✅ Full deployment to AWS
+
+---
+
+## 📽️ Demo Video
+
+🎥 [Watch the Demo](https://your-demo-link.com)
+
+---
+
+## 📁 Folder Structure (Quick Overview)
+
+```
+/client        → Angular frontend (SPA)
+/server        → Node + Express backend API
+/uploads       → Uploaded image assets
+```
+---
