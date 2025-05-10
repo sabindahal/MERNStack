@@ -7,7 +7,7 @@
 ## 🌐 Live Deployment
 
 - **Frontend**: [Live S3 Site] https://d2pbctyagg4jg7.cloudfront.net/login
-- **Backend (API)**: [Elastic Beanstalk API] http://meanclient.s3-website.us-east-2.amazonaws.com/
+- **Backend (API)**: [Elastic Beanstalk API]:  mean-backend-env.eba-rc3pastw.us-west-2.elasticbeanstalk.com
 - **Database**: MongoDB Atlas
 
 ---
@@ -18,8 +18,8 @@
 |-------------------|----------------------------------------------------|
 | **Landis Bargatze**   | 🔧 Debugging, Deployment, Frontend Integration     |
 | **Junshan Tao**       | 🔐 Backend Logic, MongoDB Modeling, Authentication |
-| **Sabin Dahal**       | 🚀 Deployment (EB & S3), Testing                 |
-| **Patrick Garner**    | 🎨 UI Design, UX Feedback, Functional Testing     |
+| **Sabin Dahal**       | 🚀 Deployment (EB & S3), Backend Logic, Testing    |
+| **Patrick Garner**    | 🎨 UI/UX Design, Project Management , Testing      |
 
 ---
 
