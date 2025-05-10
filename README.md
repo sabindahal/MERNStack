@@ -7,7 +7,7 @@
 ## 🌐 Live Deployment
 
 - **Frontend**: [Live S3 Site] https://d2pbctyagg4jg7.cloudfront.net/login
-- **Backend (API)**: [Elastic Beanstalk API]
+- **Backend (API)**: [Elastic Beanstalk API] http://meanclient.s3-website.us-east-2.amazonaws.com/
 - **Database**: MongoDB Atlas
 
 ---
