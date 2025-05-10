@@ -4,9 +4,9 @@
 <a routerLink="/add-post">
   <button>Add New Post</button>
 </a>
-<div *ngIf="error" style="color: red">{{ error }}</div>
+<div *ngIf="error" class="error">{{ error }}</div>
 
-<div *ngIf="posts.length === 0">
+<div *ngIf="posts.length === 0" class="no-posts">
   No posts found.
 </div>
 
@@ -23,4 +23,3 @@
   <button (click)="editPost(post._id)">✏️ Edit</button>
   <button (click)="deletePost(post._id)">🗑️ Delete</button>
 </div>
-

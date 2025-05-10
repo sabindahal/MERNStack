@@ -66,7 +66,7 @@ export class PostDetailComponent implements OnInit {
         });
       },
       error: (err) => {
-        this.error = err?.error?.message || err?.message || 'Wave failed';
+        this.error = err?.error?.message || err?.mes || 'Wave failed';
       }
     });
   }

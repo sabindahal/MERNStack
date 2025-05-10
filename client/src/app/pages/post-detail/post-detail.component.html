@@ -1,11 +1,12 @@
 <h2>Post Detail</h2>
 
-<div *ngIf="error" style="color:red">{{ error }}</div>
+<div *ngIf="error" class="error">{{ error }}</div>
 
-<div *ngIf="post">
+<div *ngIf="post" class="post-detail">
   <h3>{{ post.title }}</h3>
   <p>{{ post.content }}</p>
   <img *ngIf="post.imageName" [src]="uploadBaseUrl + post.imageName" alt="Post image" width="300" />
+
   <p>Waves: {{ post.listOfUsersWaved?.length || 0 }}</p>
   <button (click)="wave()">
     {{ isWaved ? 'Unwave' : 'Wave' }}

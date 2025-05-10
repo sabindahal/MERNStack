@@ -10,7 +10,10 @@
   </div>
 
   <p>You can choose a new image (optional):</p>
-  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  <div>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+  </div>
+
 
   <button type="submit">Update</button>
   <button type="button" (click)="cancel()">Cancel</button>
