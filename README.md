@@ -51,7 +51,7 @@ cd MERNStack
 
 ```bash
 cd server
-npm install
+npm install express mongoose cors dotenv bcryptjs jsonwebtoken multer
 ```
 
 **Frontend:**
@@ -103,7 +103,7 @@ Access the app at [http://localhost:4200](http://localhost:4200)
 
 ## 📽️ Demo Video
 
-🎥 [Watch the Demo](https://your-demo-link.com)
+🎥 [Watch the Demo]on canvas
 
 ---
 
